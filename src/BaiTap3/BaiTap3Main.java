@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package BaiTap3;
+import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -16,11 +17,15 @@ public class BaiTap3Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        ArrayList<SinhVien> dsSV = new ArrayList();
-        dsSV.add(new SinhVien("Võ Thành Luân", new Date(1999, 12, 23), 9));
-        dsSV.add(new SinhVien("Lâm Mai Huỳnh", new Date(1999, 12, 23), 7));
-        dsSV.add(new SinhVien("Cao Quỳnh Anh", new Date(1999, 12, 23), 8));
+    public static void main(String[] args) throws ParseException {
+        //  Định dạng kiểu Date
+        String pattern = "dd-MM-yyyy";
+        SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
+        
+        ArrayList<SinhVien> dsSV = new ArrayList<SinhVien>();
+        dsSV.add(new SinhVien("Võ Thành Luân", dateFormat.parse("23-12-1999"), 9));
+        dsSV.add(new SinhVien("Lâm Mai Huỳnh", dateFormat.parse("12-06-1999"), 7));
+        dsSV.add(new SinhVien("Cao Quỳnh Anh", dateFormat.parse("14-02-1999"), 8));
         
         QuanLySinhVien qlsv = new QuanLySinhVien();
         qlsv.setDsSV(dsSV);

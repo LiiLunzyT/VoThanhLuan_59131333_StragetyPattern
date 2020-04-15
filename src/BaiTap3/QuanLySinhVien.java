@@ -5,6 +5,7 @@
  */
 package BaiTap3;
 import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -38,8 +39,12 @@ public class QuanLySinhVien {
     
     public void inDS() {
         for( SinhVien sv : dsSV ) {
+            String pattern = "dd-MM-yyyy";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+            String date = simpleDateFormat.format(sv.getNgaySinh());
+            
             System.out.println("Tên: " + sv.getHoTen());
-            System.out.println("Ngày sinh: " + sv.getNgaySinh().toString());
+            System.out.println("Ngày sinh: " + date);
             System.out.println("Điểm Trung bình: " + sv.getDiemTB());
         }
     }
