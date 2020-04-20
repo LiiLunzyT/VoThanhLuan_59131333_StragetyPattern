@@ -29,10 +29,14 @@ public class BaiTap3Main {
         
         QuanLySinhVien qlsv = new QuanLySinhVien();
         qlsv.setDsSV(dsSV);
+        
+        System.out.println("========= Chưa sắp xếp ==========");
+        qlsv.inDS();;
+        
         qlsv.setSoSanh(new SoSanhTheoDiem());
         qlsv.sapXep();
         System.out.println("========= So Sánh theo Điểm ==========");
-        qlsv.inDS();;
+        qlsv.inDS();
         
         qlsv.setSoSanh(new SoSanhTheoTen());
         qlsv.sapXep();
